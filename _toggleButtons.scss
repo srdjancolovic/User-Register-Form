@@ -1,0 +1,81 @@
+/////TOGGLER AND SLIDER STYLES
+@mixin switch-input {
+  opacity: 0;
+  //Toggle ON
+  &:checked + .slider {
+    background: #0b5fff;
+    //Toggle ON hover
+    &:hover {
+      background: #0053f0;
+    }
+  }
+
+  //Toggle ON and disabled
+  &:checked {
+    &:disabled + .slider {
+      background: rgba(11, 95, 255, 0.5);
+    }
+  }
+  //Manipulate values for toggler in mixin below when toggle is ON
+  @include toggler-position-when-checked;
+
+  //Toggle OFF and disabled
+  &:not(:checked) {
+    &:disabled + .slider {
+      background: rgba(144, 152, 161, 0.7);
+    }
+  }
+  //Toggle OFF
+  &:not(:checked) + .slider {
+    background: #9098a1;
+  }
+}
+
+//////TOGGLE BUTTON AND SLIDER DEFAULT STYLE
+//Toggle button wrapper
+@mixin switch-button-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+  //Change width and height of switch button here
+  width: 40px;
+  height: 24px;
+}
+//Toggle button slider
+@mixin slider-default-style {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s;
+  border-radius: 16px;
+}
+//Toggle button dot
+@mixin toggler {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  transition: all 0.3s;
+  @include toggler-position-when-not-checked;
+}
+//Values when toggle is ON
+@mixin toggler-position-when-checked {
+  &:checked + .slider::before {
+    left: 45%;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+  }
+}
+//Values when toggle is OFF
+@mixin toggler-position-when-not-checked {
+  left: 2px;
+  right: 45%;
+  top: 2px;
+  bottom: 2px;
+}

@@ -1,0 +1,136 @@
+////////RADIO BUTTONS
+//This is for radio button input element, with its states (hover, disabled, checked,unchecked)
+@mixin radio-btn-input-element {
+  opacity: 0;
+  //When checkbox is checked
+  &:checked + .circle {
+    background: #0b5fff;
+  }
+  //When button is checked, but disabled
+  &:checked {
+    &:disabled + .circle {
+      background: rgba(11, 95, 255, 0.5);
+    }
+  }
+
+  //Hover effect when checked
+  &:checked {
+    //Increase circle size
+    &:hover + .circle {
+      width: 18px;
+      height: 18px;
+    }
+    //Show shadow behind cicrle
+    &:hover + .circle::before {
+      opacity: 1;
+    }
+    //Incerese dot size
+    &:hover + .circle::after {
+      width: 9px;
+      height: 9px;
+    }
+    //Not displaying hover when button is disabled
+    &:hover {
+      &:disabled + .circle::after {
+        width: 8px;
+        height: 8px;
+      }
+    }
+    &:hover {
+      &:disabled + .circle::before {
+        opacity: 0;
+      }
+    }
+    &:hover {
+      &:disabled + .circle {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  ///When button isn't checked
+  &:not(:checked) {
+    //Hover when button isn't checked
+    &:hover + .circle {
+      width: 16px;
+      height: 16px;
+    }
+    //Show shadow behind cicrle
+    &:hover + .circle::before {
+      opacity: 1;
+      width: 40px;
+      height: 40px;
+    }
+    //Remove dot inside circle when hovering
+    &:hover + .circle::after {
+      background: none;
+    }
+    //Remove shadow hover when button isn't checked and is disabled
+    &:hover {
+      &:disabled + .circle::before {
+        opacity: 0;
+      }
+    }
+    // // When button is disabled and  isn't checked
+    &:disabled + .circle {
+      background: none;
+      border: 1px solid rgba(11, 95, 255, 0.5);
+    }
+  }
+
+  //When checkbox isn't check
+  &:not(:checked) + .circle {
+    background: white;
+    border: 1px solid #0b5fff;
+  }
+}
+//////CIRCLE WRAPPER
+@mixin circle-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+}
+////////RADIO BUTTON CIRCLE (circle)
+@mixin radio-btn-circle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  width: 16px;
+  height: 16px;
+}
+
+////////CIRCLE BEFORE ELEMENT (for hover effect)
+@mixin radio-btn-circle-before-element {
+  position: absolute;
+  content: "";
+  background: rgba(0, 84, 240, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  opacity: 0;
+  transition: all 0.3s;
+  width: 45px;
+  height: 45px;
+}
+
+/////////CIRCLE AFTER ELEMENT (this is dot inside circle)
+@mixin radio-btn-circle-after-element {
+  position: absolute;
+  content: "";
+  background: #ffffff;
+  border-radius: 16px;
+  transition: all 0.3s;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 8px;
+  width: 8px;
+}

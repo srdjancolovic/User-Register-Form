@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Source Sans Pro and Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>User Register</title>
+  </head>
+  <body>
+    <!-- FORM WRAPPER -->
+    <div class="form-wrapper">
+      <!-- Line below top of form wrapper -->
+      <div class="line"></div>
+
+      <!-- FORM 1 -->
+      <form id="form-1">
+        <!-- Form heading -->
+        <h3>User register</h3>
+
+        <!-- First name -->
+        <div class="input-label">
+          <input
+            type="text"
+            id="name"
+            name="firstname"
+            class="capitalize"
+            placeholder=" "
+            required
+            minlength="3"
+            maxlength="15"
+            value="Srdjan"
+          />
+          <label for="name" class="label">Your name<span>*</span></label>
+        </div>
+
+        <!-- Surname -->
+        <div class="input-label">
+          <input
+            type="text"
+            id="surname"
+            name="lastname"
+            class="capitalize"
+            placeholder=" "
+            required
+            minlength="3"
+            maxlength="20"
+            value="Colovic"
+          />
+          <label for="surname" class="label">Your surname<span>*</span></label>
+        </div>
+
+        <!-- Email -->
+        <div class="input-label">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" "
+            required
+            value="colovicsrdjan@yahoo.com"
+          />
+          <label for="email" class="label">email<span>*</span></label>
+        </div>
+
+        <!-- Password -->
+        <div class="input-label">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder=" "
+            required
+            minlength="5"
+            maxlength="25"
+          />
+          <label for="password" class="label">Password<span>*</span></label>
+        </div>
+
+        <!-- Example of success message -->
+        <p class="hint-message success-msg">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.00004 0.34436C3.32004 0.34436 0.333374 3.33103 0.333374 7.01103C0.333374 10.691 3.32004 13.6777 7.00004 13.6777C10.68 13.6777 13.6667 10.691 13.6667 7.01103C13.6667 3.33103 10.68 0.34436 7.00004 0.34436ZM7.00004 7.67769C6.63337 7.67769 6.33337 7.37769 6.33337 7.01103V4.34436C6.33337 3.97769 6.63337 3.67769 7.00004 3.67769C7.36671 3.67769 7.66671 3.97769 7.66671 4.34436V7.01103C7.66671 7.37769 7.36671 7.67769 7.00004 7.67769ZM6.33337 9.01103V10.3444H7.66671V9.01103H6.33337Z"
+              fill=""
+            />
+          </svg>
+          <span class="msg-text success-msg-text"
+            >This is an SUCCESS message</span
+          >
+        </p>
+
+        <!-- Confirm password -->
+        <div class="input-label">
+          <input
+            type="password"
+            id="confimpassword"
+            name="confimpassword"
+            placeholder=" "
+            required
+            minlength="5"
+            maxlength="15"
+          />
+          <label for="confimpassword" class="label"
+            >Confirm password<span>*</span></label
+          >
+        </div>
+        <!-- Example of error message -->
+        <p class="hint-message error-msg">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.00004 0.34436C3.32004 0.34436 0.333374 3.33103 0.333374 7.01103C0.333374 10.691 3.32004 13.6777 7.00004 13.6777C10.68 13.6777 13.6667 10.691 13.6667 7.01103C13.6667 3.33103 10.68 0.34436 7.00004 0.34436ZM7.00004 7.67769C6.63337 7.67769 6.33337 7.37769 6.33337 7.01103V4.34436C6.33337 3.97769 6.63337 3.67769 7.00004 3.67769C7.36671 3.67769 7.66671 3.97769 7.66671 4.34436V7.01103C7.66671 7.37769 7.36671 7.67769 7.00004 7.67769ZM6.33337 9.01103V10.3444H7.66671V9.01103H6.33337Z"
+              fill=""
+            />
+          </svg>
+          <span class="msg-text error-msg-text">This is an ERROR message</span>
+        </p>
+
+        <!-- Terms of use and privacy toggle buttons -->
+
+        <div class="toggle-buttons">
+          <!-- Terms of use -->
+          <div class="toggler">
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider"></span>
+            </label>
+            <!-- Terms of use text -->
+            <p class="terms-of-use">I accept the general terms of use</p>
+          </div>
+
+          <!-- Privacy -->
+          <div class="toggler">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+            <!-- Privacy text -->
+            <p class="privacy">Privacy</p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <!-- Cancel and Next Step button -->
+          <button class="white-bg" id="cancel-btn">Cancel</button>
+          <button
+            class="blue-bg"
+            id="next-step-btn"
+            type="submit"
+            onclick="window.location.href='form2.html'"
+          >
+            Next Step
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

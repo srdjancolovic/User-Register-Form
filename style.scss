@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import "./buttons";
+@import "./messages";
+@import "./toggleButtons";
+@import "./radioButtons";
+@import "./inputsAndItsStates";
+@import "./formWrapAndHeading";
+@import "./Form1";
+@import "./form2";
+
+body {
+  font-family: "Source Sans Pro";
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  .form-wrapper {
+    @include Form-wrapper;
+  }
+}
+@media (max-width: 1200px) {
+  body {
+    .form-wrapper {
+      min-width: 750px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  body {
+    .form-wrapper {
+      min-width: 100%;
+      min-height: 100%;
+      form {
+        top: 100px;
+      }
+    }
+  }
+}

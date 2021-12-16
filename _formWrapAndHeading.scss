@@ -1,0 +1,41 @@
+@mixin Form-wrapper {
+  min-width: 1180px;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(55, 67, 90, 0.1),
+    0px 0px 60px 10px rgba(55, 67, 90, 0.1);
+  border-radius: 10px;
+  position: relative;
+  //Hide line overflow, enable/disable here
+  overflow-x: hidden;
+  //Form default style
+  form {
+    position: absolute;
+    top: 200px;
+  }
+  //Line above register form
+  .line {
+    min-width: 1180px;
+    height: 1px;
+    background: #858c94;
+    opacity: 0.2;
+    position: absolute;
+    top: 80px;
+  }
+}
+
+//Form heading
+@mixin Form-heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-left: 12px;
+  width: fit-content;
+}

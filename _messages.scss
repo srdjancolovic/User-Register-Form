@@ -1,0 +1,34 @@
+///////DEFAULT MESSAGE STYLE
+@mixin Hint-msg-default-style {
+  margin-top: -10px;
+  font-size: 13px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 6px 16px;
+  width: 100%;
+  svg {
+    margin-right: 8px;
+  }
+}
+///////ERROR MESSAGE
+@mixin Error-msg-style {
+  background: #feefef;
+  color: #da1414;
+  svg {
+    path {
+      fill: #da1414;
+    }
+  }
+}
+///////SUCCESS MESSAGE
+@mixin Success-msg-style {
+  background: #edf9f0;
+  color: #287d3c;
+  svg {
+    path {
+      fill: #287d3c;
+    }
+  }
+}

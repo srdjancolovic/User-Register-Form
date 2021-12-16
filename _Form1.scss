@@ -1,0 +1,99 @@
+//Set width of form
+#form-1 {
+  width: 320px;
+}
+form {
+  //Form heading
+  h3 {
+    @include Form-heading;
+  }
+  //Input field and label wrapper
+  .input-label {
+    //This is so we can have access the label, for its styling
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    //Input field
+    input {
+      @include input-and-states-styles;
+    }
+    //Input label
+    label {
+      @include Label-default-style;
+    }
+  }
+  //Succes or error message below input field
+  //Message default styling
+  .hint-message {
+    @include Hint-msg-default-style;
+  }
+  //Error message styling
+  .error-msg {
+    @include Error-msg-style;
+  }
+  //Success message styling
+  .success-msg {
+    @include Success-msg-style;
+  }
+
+  //TOGGLE BUTTONS AND TEXT
+  .toggle-buttons {
+    margin-top: 30px;
+    .toggler {
+      display: flex;
+      margin-left: 4px;
+      //Text next to toggle button
+      p {
+        line-height: 24px;
+        color: #09101d;
+        font-weight: 600;
+        font-size: 16px;
+      }
+      &:last-child {
+        margin-top: 20px;
+      }
+      //Switch button wrapper
+      .switch {
+        @include switch-button-wrapper;
+        //Switch button input with states
+        input {
+          @include switch-input;
+        }
+        //Switch button slider
+        .slider {
+          @include slider-default-style;
+          //Switch button toggler (circle)
+          &::before {
+            @include toggler;
+          }
+        }
+      }
+    }
+  }
+
+  //CANCEL and NEXT STEP buttons
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    button {
+      @include LargeBtnDefaultStyle;
+    }
+    .white-bg {
+      @include white-bg-btn-with-states;
+    }
+    .blue-bg {
+      @include blue-bg-btn-with-states;
+    }
+  }
+}
+@media (max-width: 768px) {
+  form {
+    .buttons {
+      button {
+        @include MediumBtnDefaultStyle;
+      }
+    }
+  }
+}

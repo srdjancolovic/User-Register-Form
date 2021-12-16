@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Source Sans Pro and Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>User Register</title>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="line"></div>
+
+      <form id="form-2" novalidate>
+        <h3 class="heading">User register</h3>
+
+        <!-- LEFT SIDE of register form (Country, city, zip code, address, personal ID card) -->
+        <div class="sections">
+          <div class="left-section section">
+            <!-- Country -->
+            <div class="input-label">
+              <input class="dropdown-input" />
+              <label for="country">Country</label>
+              <div class="select-dropdown">
+                <select name="country" id="country">
+                  <option value="bosnia and herzegovina">
+                    Bosnia and Herzegovina
+                  </option>
+                  <option value="united states">United States</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- City -->
+            <div class="input-label">
+              <input class="dropdown-input" />
+              <label for="city">City</label>
+              <div class="select-dropdown">
+                <select name="city" id="city">
+                  <option value="trebinje">Trebinje</option>
+                  <option value="new york">New York</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Zip code -->
+            <div class="input-label">
+              <!-- NOTE:Input type number doesn't support minlength and maxlength, that's why I've used input type TEL to set min and max length -->
+              <input
+                type="tel"
+                id="zipcode"
+                minlength="3"
+                maxlength="6"
+                name="zipcode"
+                required
+                placeholder=" "
+              />
+              <label for="zipcode">Zip Code<span>*</span></label>
+            </div>
+
+            <!-- Address and number -->
+            <div class="address-number">
+              <!-- Address input -->
+              <div class="input-label">
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  class="address capitalize"
+                  placeholder=" "
+                  minlength="5"
+                  minlength="15"
+                />
+                <label for="address">Address</label>
+              </div>
+
+              <!-- Address number input -->
+              <div class="input-label">
+                <input
+                  type="number"
+                  id="address-num"
+                  name="address-num"
+                  class="address-num"
+                  min="1"
+                  placeholder=" "
+                />
+                <label for="address-num">Number</label>
+              </div>
+            </div>
+
+            <!-- Perosnal ID card -->
+            <div class="input-label">
+              <!-- NOTE:Input type number doesn't support minlength and maxlength, that's why I've used input type TEL to set min and max length -->
+              <input
+                type="tel"
+                id="id-num"
+                name="id-num"
+                placeholder=" "
+                minlength="5"
+              />
+              <label for="id-num">Personal ID Card</label>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE of form (date of birth, radio buttons, phone number, account number * 2, register button) -->
+          <div class="right-section section">
+            <!-- Date of birth -->
+            <div class="input-label">
+              <input
+                type="date"
+                id="date-of-birth"
+                name="date-of-birth"
+                class="date-of-birth"
+              />
+              <label for="date-of-birth">Date of birth</label>
+            </div>
+
+            <!-- Radio buttons -->
+            <div class="radio-btns-wrapper">
+              <div class="radio-btns">
+                <!-- Male button -->
+                <div class="radio">
+                  <label class="circle-wrapp">
+                    <input type="checkbox" name="male" checked />
+                    <span class="circle"></span>
+                  </label>
+                  <p>Male</p>
+                </div>
+
+                <!-- Female button -->
+                <div class="radio">
+                  <label class="circle-wrapp">
+                    <input type="checkbox" name="female" />
+                    <span class="circle"></span>
+                  </label>
+                  <p>Female</p>
+                </div>
+
+                <!-- Other button -->
+                <div class="radio">
+                  <label class="circle-wrapp">
+                    <input type="checkbox" checked name="other" disabled />
+                    <span class="circle"></span>
+                  </label>
+                  <p>Other</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone number -->
+            <div class="input-label">
+              <input
+                type="tel"
+                id="phone-number"
+                name="phone-number"
+                minlength="5"
+                placeholder=" "
+              />
+              <label for="phone-number">Phone Number</label>
+            </div>
+
+            <!-- Account number first field -->
+            <div class="input-label">
+              <!-- NOTE:Input type number doesn't support minlength and maxlength, that's why I've used input type TEL to set min and max length -->
+              <input
+                type="tel"
+                id="account-num"
+                name="account-num"
+                minlength="5"
+                maxlength="17"
+                placeholder=" "
+              />
+              <label for="account-num">Account number</label>
+            </div>
+
+            <!-- Account number second field -->
+            <div class="input-label">
+              <input
+                type="tel"
+                id="account-num"
+                name="account-num"
+                minlength="5"
+                maxlength="17"
+                placeholder=" "
+              />
+              <label for="account-number-two">Account number 2</label>
+            </div>
+
+            <!-- Register button -->
+            <div class="register-button">
+              <button id="register-btn" type="submit">Register</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

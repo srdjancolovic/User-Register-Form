@@ -1,0 +1,74 @@
+@mixin common-style {
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: 600;
+  font-family: "Source Sans Pro";
+}
+///////LARGE BUTTON
+@mixin LargeBtnDefaultStyle {
+  width: 136px;
+  height: 56px;
+  font-size: 18px;
+  line-height: 28px;
+  padding: 14px 18px;
+  @include common-style;
+}
+////////MEDIUM BUTTON
+@mixin MediumBtnDefaultStyle {
+  width: 138px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 16px;
+  @include common-style;
+}
+////////SMALL BUTTON
+@mixin SmallBtnDefaultStyle {
+  width: 103px;
+  height: 36px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 12px;
+  @include common-style;
+  border-radius: 6px;
+}
+
+//White background button with hover, active and disabled state
+@mixin white-bg-btn-with-states {
+  background: #ffffff;
+  color: #0b5fff;
+  border: 2px solid #0b5fff;
+  &:hover {
+    background: #eef2fa;
+    color: #0053f0;
+    border-color: #0053f0;
+  }
+  &:active {
+    background: #eef2fa;
+    border-color: #2e5aac;
+    color: #2e5aac;
+  }
+  &:disabled {
+    pointer-events: none;
+    color: rgba(11, 95, 255, 0.5);
+    border-color: rgba(11, 95, 255, 0.5);
+  }
+}
+
+//Blue background button with hover, active and disabled state
+@mixin blue-bg-btn-with-states {
+  background: #0b5fff;
+  color: #ffffff;
+  &:hover {
+    background: #0053f0;
+  }
+  &:active {
+    background: #004ad7;
+  }
+  &:disabled {
+    background: rgba(11, 95, 255, 0.5);
+  }
+}
